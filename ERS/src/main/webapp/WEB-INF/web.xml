@@ -24,4 +24,7 @@
   	<servlet-name>AjaxServlet</servlet-name>
   	<url-pattern>*.ajax</url-pattern>
   </servlet-mapping>
+  <welcome-file-list>
+		<welcome-file>GenericCorpIndex.html</welcome-file>
+  </weclome-file-list>
 </web-app>
