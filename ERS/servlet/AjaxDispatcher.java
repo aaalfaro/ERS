@@ -21,8 +21,7 @@ public class AjaxDispatcher {
 			case "/ERS/getEmployees.ajax":
 				return EmployeeService.getEveryone(emp);
 			case "/ERS/ManagerGetReimbursement.ajax":
-				int id = Integer.parseInt(request.getParameter("get"));
-				System.out.println(id);
+				Integer id = (Integer) Integer.parseInt((String) request.getSession().getAttribute("get"));
 				return ReimbursementService.getEmployeesReimbursement(id);
 			default:
 				return new String ("Not Implemented");

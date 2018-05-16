@@ -25,6 +25,9 @@ public class Dispatcher {
 				return ReimbursementService.NewReimbursement(request, response);
 			case "/ERS/HTML/resolve.do":
 				return ReimbursementInformationService.Resolve(request, response);
+			case "/ERS/HTML/getReim.do":
+				request.getSession().setAttribute("get", request.getParameter("get"));
+				return "/HTML/ViewEmployeeReimbursements.jsp";
 			default:
 				return "404.jsp";
 		}

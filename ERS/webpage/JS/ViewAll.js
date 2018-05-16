@@ -26,6 +26,16 @@ function getReimbursements(){
                 let tdLname = document.createElement("td");
                 let tdPhone = document.createElement("td");
                 let tdAddress = document.createElement("td");
+                let tdButton = document.createElement("td");
+                
+                let get = document.createElement("button");
+                get.setAttribute("type","submit");
+                get.setAttribute("class","btn btn-primary");
+                get.setAttribute("value",id);
+                get.setAttribute("name","get");
+                get.textContent = "Get Reimbursements";
+
+                tdButton.appendChild(get);
 
                 tdId.textContent = id;
                 tdTitle.textContent = title;
@@ -34,6 +44,9 @@ function getReimbursements(){
                 tdPhone.textContent = telephone;
                 tdAddress.textContent = address; 
                 
+                let form = document.createElement("form");
+                form.setAttribute("method","POST");
+                form.setAttribute("action","getReim.do");
                 
                 row.appendChild(tdId);
                 row.appendChild(tdTitle);
@@ -41,6 +54,9 @@ function getReimbursements(){
                 row.appendChild(tdLname);
                 row.appendChild(tdPhone);
                 row.appendChild(tdAddress);
+                form.appendChild(tdButton);
+                
+                row.appendChild(form);
 
                 
                 document.getElementById("employee").appendChild(row);
@@ -51,5 +67,4 @@ function getReimbursements(){
     ajax.send();
 
 }
-
 

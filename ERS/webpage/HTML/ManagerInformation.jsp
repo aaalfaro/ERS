@@ -22,7 +22,7 @@
             		<a href="./FinancialManagerHome.jsp">Home</a>
             	</li>
             	<li>
-            		<a href="./ViewEmployees.jsp">Employees <span class="glyphicons glyphicons-family"></span></a>
+            		<a href="./ViewEmployees.jsp">Employees <span class="glyphicon glyphicon-eye-open"></span></a>
             	</li>
             	<li>
             		<a href="./ManagerReimbursement.jsp">Reimbursement <span class="glyphicon glyphicon-usd"></span></a>

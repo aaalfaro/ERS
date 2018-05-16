@@ -3,10 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>View Employee reimbursements</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
  crossorigin="anonymous">
 <link rel="stylesheet" href="../CSS/FinancialManager.CSS">
-<title>Manage employees</title>
 </head>
 <body>
 	<div class="container">
@@ -37,30 +38,33 @@
        <%@ page import="com.revature.model.Employee" %>
        <%Employee user = (Employee) request.getSession().getAttribute("Employee"); %>
 	</div>
-	<div class="container" style="background-color: white">
-		<div class="page-header">
-            <h3>Employees</h3>
-        </div>
-        <table class="table table-responsive">
+	
+	<div class="container" style="background-color:white">
+	<div class="page-header">
+		<h3>Reimbursements</h3>
+		<table class="table table-responsive" style="background-color: snow">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Telephone</th>
-                    <th>Address</th>
+                    <th>Manager ID</th>
+                    <th>Category</th>
+                    <th>Amount (USD)</th>
+                    <th>Date Recieved</th>
+                    <th>Date Resolved</th>
+                    <th>Status</th>
+                    <th>image</th>
+                    <th>Approve/Reject</th>
                     
                 </tr>
             </thead>
-            <tbody id="employee">
+            <tbody id="reimbursement">
 
             </tbody>
         </table>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../JS/ViewAll.js"></script>
-	
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../JS/getReimbursement.js"></script>
 </body>
 </html>
