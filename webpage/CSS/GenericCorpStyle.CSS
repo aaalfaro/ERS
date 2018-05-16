@@ -1,0 +1,10 @@
+body{
+    background-image: url("adult-arrival-beard-429248.jpg") ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+    background:rgba(195,176,145,0.7);
+  }
