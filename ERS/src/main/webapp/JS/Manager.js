@@ -20,11 +20,11 @@ function getReimbursements(){
                 let recieved = reimbursement.recieved;
                 let resolved = reimbursement.resolved;
                 let image = reimbursement.image;
-                
+
                 let form = document.createElement("form");
                 form.setAttribute("method","POST");
                 form.setAttribute("action","resolve.do");
-                
+
                 let row = document.createElement("tr");
                 let tdId = document.createElement("td");
                 let tdAmount = document.createElement("td");
@@ -37,13 +37,13 @@ function getReimbursements(){
                 let tdButton = document.createElement("td");
                 let approve = document.createElement("button");
                 let tdImage = document.createElement("td");
-                
+
                 let link = document.createElement("a");
                 link.setAttribute("href","data:image/png;base64," + image);
-                
+
                 link.textContent = "show image";
                 tdImage.appendChild(link);
-                
+
                 approve.setAttribute("type","submit");
                 approve.setAttribute("class","btn btn-success");
                 approve.setAttribute("value","Approved");
@@ -65,10 +65,10 @@ function getReimbursements(){
                 tdCategory.textContent = cat;
                 tdStatus.textContent = status;
                 tdRecieved.textContent = recieved;
-                tdResolved.textContent = resolved; 
+                tdResolved.textContent = resolved;
                 tdRequester.textContent = requester;
                 tdManager.textContent = manager;
-                
+
                 if(status =='Approved'){
                 	row.setAttribute("class", "success");
                 }
@@ -78,8 +78,8 @@ function getReimbursements(){
                 else{
                 	row.setAttribute("class","warning");
                 }
-                
-                
+
+
                 row.appendChild(tdId);
                 row.appendChild(tdRequester);
                 row.appendChild(tdManager);
@@ -88,24 +88,24 @@ function getReimbursements(){
                 row.appendChild(tdRecieved);
                 row.appendChild(tdResolved);
                 row.appendChild(tdStatus);
-                
-                
+
+
                 let input = document.createElement("input");
                 input.setAttribute("name","reimbursement");
                 input.setAttribute("type","hidden");
                 input.setAttribute("value",id);
-                
+
                 form.appendChild(input);
                 form.appendChild(tdButton);
                 row.appendChild(tdImage);
                 if(status =='pending')
                 	row.appendChild(form);
-                
+
                 document.getElementById("reimbursement").appendChild(row);
             }
         }
     }
-    ajax.open("GET", "http://localhost:8080/ERS/FinancialManagerList.ajax")
+    ajax.open("GET", "/ERS/FinancialManagerList.ajax")
     ajax.send();
 
 }
