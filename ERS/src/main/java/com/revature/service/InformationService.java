@@ -25,6 +25,11 @@ public class InformationService {
 	}
 	
 	public static String update(HttpServletRequest request,HttpServletResponse response) {
+		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+		response.setHeader("Pragma","no-cache"); 
+		response.setDateHeader ("Expires", 0);
+		
 		Employee user = (Employee) request.getSession().getAttribute("Employee");
 		String first = request.getParameter("firstname");
 		String last = request.getParameter("lastname");

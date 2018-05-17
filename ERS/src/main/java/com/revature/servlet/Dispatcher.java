@@ -25,7 +25,13 @@ public class Dispatcher {
 				return ReimbursementService.NewReimbursement(request, response);
 			case "/ERS/HTML/resolve.do":
 				return ReimbursementInformationService.Resolve(request, response);
+			//I was assigning a value to a button and couldn't get its value without setting it as an attribute
 			case "/ERS/HTML/getReim.do":
+				response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+				response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+				response.setHeader("Pragma","no-cache"); 
+				response.setDateHeader ("Expires", 0);
+				
 				request.getSession().setAttribute("get", request.getParameter("get"));
 				return "/HTML/ViewEmployeeReimbursements.jsp";
 			default:

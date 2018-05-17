@@ -32,6 +32,12 @@ public class ReimbursementInformationService {
 	}
 	
 	public static String Resolve(HttpServletRequest request,HttpServletResponse response) {
+		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+		response.setHeader("Pragma","no-cache"); 
+		response.setDateHeader ("Expires", 0);
+		
+		
 		String approve = request.getParameter("approve");
 		String reject = request.getParameter("reject");
 		int id = Integer.parseInt(request.getParameter("reimbursement"));

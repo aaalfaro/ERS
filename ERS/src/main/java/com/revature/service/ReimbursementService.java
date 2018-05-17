@@ -41,9 +41,18 @@ public class ReimbursementService {
 	}
 	
 	public static String NewReimbursement(HttpServletRequest request, HttpServletResponse response) {
+		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+		response.setHeader("Pragma","no-cache"); 
+		response.setDateHeader ("Expires", 0);
+		
+		
 		String amount = request.getParameter("amount");
 		String category = request.getParameter("category");
 		String picture = request.getParameter("pic");
+		
+		//I know, I know its not the most elegant solution but I couldn't figure out a way to get the picture
+		//From any directory. So for this project it has to come from the C drive
 		File image = new File("C://"+picture);
 	
 		Employee user = (Employee) request.getSession().getAttribute("Employee");
