@@ -39,6 +39,11 @@ public class EmployeeService {
 	}
 	
 	public static String login(HttpServletRequest request, HttpServletResponse response) {
+		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); 
+		response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+		response.setHeader("Pragma","no-cache"); 
+		response.setDateHeader ("Expires", 0);
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		Employee temp = new Employee(username,password);
@@ -55,7 +60,7 @@ public class EmployeeService {
 	}
 	
 	public static String logout(HttpServletRequest request,HttpServletResponse response) {
-		request.getSession().removeAttribute("Employee");
+		
 		
 		return "/HTML/GenericCorpIndex.html";
 	}
